@@ -3,12 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Thomas/Documents/NetBeansProjects/banco-simples/src/ContaCorrente.java</file>
-            <file>file:/C:/Users/Thomas/Documents/NetBeansProjects/banco-simples/src/ContaPoupanca.java</file>
-            <file>file:/C:/Users/Thomas/Documents/NetBeansProjects/banco-simples/src/Main.java</file>
-            <file>file:/C:/Users/Thomas/Documents/NetBeansProjects/banco-simples/src/Conta.java</file>
-            <file>file:/C:/Users/Thomas/Documents/NetBeansProjects/banco-simples/src/Banco.java</file>
-            <file>file:/C:/Users/Thomas/Documents/NetBeansProjects/banco-simples/src/Cliente.java</file>
+            <file>file:/C:/Users/Thomas/Documents/NetBeansProjects/uc-programacao/banco-simples/src/Cliente.java</file>
+            <file>file:/C:/Users/Thomas/Documents/NetBeansProjects/uc-programacao/banco-simples/src/ContaPoupanca.java</file>
+            <file>file:/C:/Users/Thomas/Documents/NetBeansProjects/uc-programacao/banco-simples/src/ContaCorrente.java</file>
+            <file>file:/C:/Users/Thomas/Documents/NetBeansProjects/uc-programacao/banco-simples/src/Conta.java</file>
+            <file>file:/C:/Users/Thomas/Documents/NetBeansProjects/uc-programacao/banco-simples/src/Main.java</file>
         </group>
     </open-files>
 </project-private>

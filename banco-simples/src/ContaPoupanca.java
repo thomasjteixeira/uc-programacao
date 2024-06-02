@@ -4,7 +4,7 @@ public class ContaPoupanca extends Conta {
     private static final double LIMITE_SAQUE = 500;
 
     public ContaPoupanca(Cliente cliente) {
-        super(cliente);
+        super(cliente, "poupança");
     }
 
     @Override

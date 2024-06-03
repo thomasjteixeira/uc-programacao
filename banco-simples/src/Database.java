@@ -1,3 +1,4 @@
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -14,7 +15,6 @@ public class Database {
             Class.forName("org.sqlite.JDBC");
             // Estabelecer a conexão
             conn = DriverManager.getConnection(URL);
-            System.out.println("Connection to SQLite has been established.");
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         } catch (ClassNotFoundException e) {
@@ -40,10 +40,9 @@ public class Database {
                 + ");";
 
         try (Connection conn = connect();
-             Statement stmt = conn.createStatement()) {
+                Statement stmt = conn.createStatement()) {
             stmt.execute(sqlCliente);
             stmt.execute(sqlConta);
-            System.out.println("Tables created.");
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }

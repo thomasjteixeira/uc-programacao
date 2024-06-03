@@ -1,3 +1,4 @@
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -21,16 +22,20 @@ public class Cliente {
         this.nome = nome;
         update();
     }
-    
-    public int getId(){
+
+    public int getId() {
         return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     private void save() {
         String sql = "INSERT INTO cliente(nome) VALUES(?)";
 
         try (Connection conn = Database.connect();
-             PreparedStatement pstmt = conn.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS)) {
+                PreparedStatement pstmt = conn.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS)) {
             pstmt.setString(1, this.nome);
             pstmt.executeUpdate();
             ResultSet rs = pstmt.getGeneratedKeys();
@@ -46,7 +51,7 @@ public class Cliente {
         String sql = "UPDATE cliente SET nome = ? WHERE id = ?";
 
         try (Connection conn = Database.connect();
-             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+                PreparedStatement pstmt = conn.prepareStatement(sql)) {
             pstmt.setString(1, this.nome);
             pstmt.setInt(2, this.id);
             pstmt.executeUpdate();

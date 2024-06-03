@@ -42,11 +42,32 @@ public abstract class Conta {
         }
     }
 
-    protected void imprimirInfosComuns() {
-        System.out.println(String.format("Titular: %s", this.cliente.getNome()));
-        System.out.println(String.format("Agencia: %d", this.agencia));
-        System.out.println(String.format("Numero: %d", this.numero));
-        System.out.println(String.format("Saldo: %.2f", this.saldo));
+  protected void imprimirInfosComuns() {
+        String sql = "SELECT c.nome, ct.agencia, ct.numero, ct.saldo "
+                   + "FROM cliente c JOIN conta ct ON c.id = ct.cliente_id "
+                   + "WHERE ct.agencia = ? AND ct.numero = ?";
+
+        try (Connection conn = Database.connect();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setInt(1, this.agencia);
+            pstmt.setInt(2, this.numero);
+
+            ResultSet rs = pstmt.executeQuery();
+
+            if (rs.next()) {
+                String nome = rs.getString("nome");
+                int agencia = rs.getInt("agencia");
+                int numero = rs.getInt("numero");
+                double saldo = rs.getDouble("saldo");
+
+                System.out.println(String.format("Titular: %s", nome));
+                System.out.println(String.format("Agencia: %d", agencia));
+                System.out.println(String.format("Numero: %d", numero));
+                System.out.println(String.format("Saldo: %.2f", saldo));
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     private void save() {
